@@ -1,30 +1,29 @@
 class GuessingGame {
     constructor() {
 
-    	this.memory=[]
-    	this.tmp=0
+        this.memory=[]
+        this.tmp=0
     }
 
     setRange(min, max) {
-    	for (i=min; i<max; i++)
-    		{this.memore.push(i)}
+        
+        for (let i=min; i<=max; i++)
+            {this.memory.push(i)}
 
     }
 
     guess() {
-    	this.tmp=Math.floor(Math.random()*this.memory.length)
-    	return this.memory[this.tmp]
-
+        this.tmp= Math.floor(this.memory.length/2)
+        return this.memory[this.tmp]
     }
 
     lower() {
-    	this.memory.splice(this.tmp)
+        this.memory.splice(this.tmp+1)
 
     }
 
     greater() {
-    	this.memore.splice(0, this.tmp)
-
+        this.memory.splice(0, this.tmp)
     }
 }
 
